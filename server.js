@@ -2,10 +2,12 @@ const express = require("express");
 const app = express();
 const DbConnection =require("./DbConnection");
 const cors=require('cors');
+require('dotenv').config()
 const bodyParser = require('body-parser');
 
+
 // Port 
-const port = 5000 ;
+const PORT = process.env.PORT || 5000;
 
 
 
@@ -21,7 +23,9 @@ app.use(bodyParser.raw({type: 'application/json'}));
 app.use(bodyParser.json())
 
 
-// ?Router Path 
+
+
+// Router
 const itemRoute=require('./routes/itemsRoute');
 const userRoute=require('./routes/userRoute');
 const billsRoute=require('./routes/billsRoute');
@@ -40,4 +44,4 @@ app.get('/', (req, res) => res.send("hello node js"))
 
 
 
-app.listen(port, () => { console.log("Port Running") });
+app.listen(PORT, () => { console.log("Port Running") });
