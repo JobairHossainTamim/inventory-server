@@ -8,4 +8,8 @@
 
 ## Run Node In Server
 
-https://inventory-server-api.up.railway.app/
+```bash
+https://pos-application-yuj3.onrender.com/
+```
+
+
